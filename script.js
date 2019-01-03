@@ -1,7 +1,15 @@
 var result = 1;
+var spinner = getElementById('spinner')
+var main = getElementById('main')
 
-
-fetch('https://swapi.co/api/people/1/')
+function main_func() {
+  
+if (true) {
+  function waiting() {
+    main.style.display = 'none'; 
+    spinner.style.display = 'block';
+  }
+  fetch('https://swapi.co/api/people/1/')
   .then(function (response) {
     response.json().then(function(data) {
       console.log(data)
@@ -21,69 +29,12 @@ fetch('https://swapi.co/api/people/1/')
     alert('sorry something went wrong');
   })
 
+}
+else  {
+  function hidding() {
+  spinner.style.display = 'none';
+  main.style.display = 'block'; 
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var result;
-
-// function getInfo (url) {
-//   fetch(url)
-//     .then(function (response) {
-//     	response.json().then(function(data) {
-//     		result = document.createElement('p')
-//     		p = data;
-//             console.log(data);
-//         });
-//   	})
-//     .catch(function (error) {
-//     	alert('sorry something went wrong');
-//   	})
-// }
-
-
-
-// function creating (argument) {
-// 	// body...
-// }
+}
