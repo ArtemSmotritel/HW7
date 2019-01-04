@@ -1,10 +1,7 @@
-var result = 1;
-var spinner = getElementById('spinner')
-var main = getElementById('main')
+var spinner = document.getElementById('spinner')
+var main = document.getElementById('main')
 
-function main_func() {
-  
-if (true) {
+do {
   function waiting() {
     main.style.display = 'none'; 
     spinner.style.display = 'block';
@@ -12,29 +9,21 @@ if (true) {
   fetch('https://swapi.co/api/people/1/')
   .then(function (response) {
     response.json().then(function(data) {
-      console.log(data)
-      function creating(data) {
-        result = data;
-        console.log(result)
-        var p;
-        var content = document.getElementById('content');
-        p = document.createElement('p');
-        p.innerHTML = result;
-        content.appendChild('p');  
+        var result = JSON.stringify(data)
+        var newP = document.createElement('p');
+        var Content = document.getElementById('content');
+        newP.innerHTML = result;
 
-       }
+        content.appendChild(newP);
+
       });
   })
   .catch(function (error) {
     alert('sorry something went wrong');
   })
+} while ()
 
-}
-else  {
-  function hidding() {
+function hidding() {
   spinner.style.display = 'none';
   main.style.display = 'block'; 
-  }
-}
-
 }
